@@ -53,11 +53,11 @@ export default function Aktiviteter() {
   const [open, setOpen] = useState(false);
 
   return (
-    <section id="aktiviteter" style={{ background: '#EDE8D5', padding: '5rem 2rem' }}>
+    <section id="aktiviteter" style={{ background: '#EDE8D5', padding: '5rem 1.5rem' }}>
       <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
         <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#1B3A5C', marginBottom: '0.5rem' }}>Aktiviteter</h2>
         <p style={{ color: '#2E5F8A', marginBottom: '3rem' }}>Hva vi tilbyr</p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem', marginBottom: '2.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '1.5rem', marginBottom: '2.5rem' }}>
           {AKTIVITETER.map(a => (
             <div key={a.title} style={{
               background: 'white', borderRadius: '1rem',
@@ -97,17 +97,19 @@ export default function Aktiviteter() {
                     const style = TYPE_STYLE[a.type];
                     return (
                       <div key={i} style={{
-                        display: 'flex', alignItems: 'center',
-                        gap: '1rem', padding: '0.9rem 1.2rem',
+                        display: 'flex', alignItems: 'flex-start',
+                        gap: '0.8rem', padding: '0.9rem 1rem',
                         background: 'white', borderRadius: '0.75rem',
                         boxShadow: '0 2px 8px rgba(27,58,92,0.06)',
                         borderLeft: `4px solid ${style.color}`,
+                        flexWrap: 'wrap',
                       }}>
                         <span style={{
-                          minWidth: '160px', fontWeight: 700,
-                          color: '#1B3A5C', fontSize: '0.9rem',
+                          minWidth: '90px', fontWeight: 700,
+                          color: '#1B3A5C', fontSize: '0.85rem',
+                          flexShrink: 0,
                         }}>{a.dato}</span>
-                        <span style={{ flex: 1, color: '#2E5F8A', fontSize: '0.95rem' }}>{a.tittel}</span>
+                        <span style={{ flex: 1, color: '#2E5F8A', fontSize: '0.9rem', minWidth: '120px' }}>{a.tittel}</span>
                         <span style={{
                           background: style.bg, color: style.color,
                           padding: '0.2rem 0.7rem', borderRadius: '1rem',
@@ -122,6 +124,11 @@ export default function Aktiviteter() {
           </div>
         )}
       </div>
+      <style>{`
+        @media (max-width: 480px) {
+          #aktiviteter { padding: 3rem 1rem !important; }
+        }
+      `}</style>
     </section>
   );
 }

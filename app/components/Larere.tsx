@@ -17,7 +17,7 @@ const LARERE = [
     bio: 'Fiolinlærer ved Bergen kulturskole med spesialkompetanse innen hardingfele. Instruktør i Bergen Juniorspelmannslag.',
     icon: '🎻',
   },
-   {
+  {
     name: 'Anne-Catherine Vonäsch-Tvinnereim',
     title: 'Fiolinist & Suzukilærer',
     bio: 'Suzuki-sertifisert lærer i fiolin, bratsj og tidlig barndomsmusikk (ECE). Aktiv freelance fiolinist i Bergen.',
@@ -33,11 +33,11 @@ const LARERE = [
 
 export default function Larere() {
   return (
-    <section id="larere" style={{ background: '#FAFAF7', padding: '5rem 2rem' }}>
+    <section id="larere" style={{ background: '#FAFAF7', padding: '5rem 1.5rem' }}>
       <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
         <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#1B3A5C', marginBottom: '0.5rem' }}>Våre lærere</h2>
         <p style={{ color: '#2E5F8A', marginBottom: '3rem' }}>Møt teamet vårt</p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '2rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '2rem' }}>
           {LARERE.map(l => (
             <div key={l.name} style={{
               background: 'white', borderRadius: '1rem',
@@ -58,6 +58,11 @@ export default function Larere() {
           ))}
         </div>
       </div>
+      <style>{`
+        @media (max-width: 480px) {
+          #larere { padding: 3rem 1rem !important; }
+        }
+      `}</style>
     </section>
   );
 }
