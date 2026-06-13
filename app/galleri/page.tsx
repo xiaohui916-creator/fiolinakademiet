@@ -53,8 +53,7 @@ export default function Galleri() {
           <p style={{ color: 'white', textAlign: 'center' }}>Ingen bilder ennå.</p>
         ) : (
           <>
-            {/* 大图轮播 */}
-            <div style={{ position: 'relative', borderRadius: '1rem', overflow: 'hidden', aspectRatio: '16/9', marginBottom: '1.5rem' }}>
+            <div style={{ position: 'relative', borderRadius: '1rem', overflow: 'hidden', aspectRatio: '16/9', marginBottom: '1rem' }}>
               {photos.map((photo, i) => (
                 <div key={photo.src} style={{
                   position: 'absolute', inset: 0,
@@ -64,7 +63,6 @@ export default function Galleri() {
                   transition: 'opacity 0.8s ease',
                 }} />
               ))}
-              {/* 左右箭头 */}
               <button onClick={() => setCurrent(p => (p - 1 + photos.length) % photos.length)}
                 style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)',
                   background: 'rgba(0,0,0,0.5)', color: 'white', border: 'none', borderRadius: '50%',
@@ -73,13 +71,11 @@ export default function Galleri() {
                 style={{ position: 'absolute', right: '1rem', top: '50%', transform: 'translateY(-50%)',
                   background: 'rgba(0,0,0,0.5)', color: 'white', border: 'none', borderRadius: '50%',
                   width: '2.5rem', height: '2.5rem', cursor: 'pointer', fontSize: '1.2rem' }}>›</button>
-              {/* 计数器 */}
               <div style={{ position: 'absolute', bottom: '1rem', right: '1rem',
                 background: 'rgba(0,0,0,0.5)', color: 'white', padding: '0.3rem 0.8rem',
                 borderRadius: '1rem', fontSize: '0.85rem' }}>
                 {current + 1} / {photos.length}
               </div>
-              {/* 圆点 */}
               <div style={{ position: 'absolute', bottom: '1rem', left: '50%', transform: 'translateX(-50%)',
                 display: 'flex', gap: '0.4rem', flexWrap: 'wrap', justifyContent: 'center', maxWidth: '60%' }}>
                 {photos.slice(0, 20).map((_, i) => (
@@ -91,7 +87,14 @@ export default function Galleri() {
               </div>
             </div>
 
-            {/* 缩略图网格 */}
+            <p style={{
+              color: 'rgba(255,255,255,0.85)', textAlign: 'center',
+              fontSize: '0.95rem', marginBottom: '1.5rem',
+              fontStyle: 'italic',
+            }}>
+              {photos[current]?.alt || ''}
+            </p>
+
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 1fr))', gap: '0.6rem' }}>
               {photos.map((photo, i) => (
                 <div key={photo.src} onClick={() => setCurrent(i)}

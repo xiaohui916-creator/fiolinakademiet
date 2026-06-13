@@ -17,6 +17,12 @@ const LARERE = [
     bio: 'Fiolinlærer ved Bergen kulturskole med spesialkompetanse innen hardingfele. Instruktør i Bergen Juniorspelmannslag.',
     icon: '🎻',
   },
+   {
+    name: 'Anne-Catherine Vonäsch-Tvinnereim',
+    title: 'Fiolinist & Suzukilærer',
+    bio: 'Suzuki-sertifisert lærer i fiolin, bratsj og tidlig barndomsmusikk (ECE). Aktiv freelance fiolinist i Bergen.',
+    icon: '🎻',
+  },
   {
     name: 'Øystein Salvesen',
     title: 'Fiolinist',
