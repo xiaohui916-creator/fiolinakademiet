@@ -4,7 +4,7 @@ const PLAN = [
     aktiviteter: [
       { dato: 'Lørdag 22.8', tittel: 'Oppstartssamling', type: 'annet' },
       { dato: 'Fredag 25.9', tittel: 'Gruppetime, mesterklasse og kafékonsert', type: 'gruppe' },
-      { dato: 'Fredag 23.10 – Søndag 25.10', tittel: 'HØSTSEMINAR med Ingrid Jensen og Jan Matthiessen', type: 'annet' },
+      { dato: 'Fredag 23.10 – Søndag 25.10', tittel: 'HØSTSEMINAR med Ingrid Jensen og Jan Matthiessen – Steinerskolen', type: 'annet' },
       { dato: 'Fredag 20.11', tittel: 'Gruppetime, mesterklasse og kafékonsert', type: 'gruppe' },
     ],
   },
